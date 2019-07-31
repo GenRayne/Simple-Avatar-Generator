@@ -140,9 +140,6 @@ function addChoosePresetHandler (presets, parts) {
     for (let i = 0; i < presets.length; i++) {
         presets[i].addEventListener('click', function (ev) {
             selectPart(presets, parts);
-            // if (ev.target.classList.contains('earing-preset')) {
-            //     earingsPresetColor();
-            // }
         })
     }
 }
@@ -214,7 +211,6 @@ infoBtn.addEventListener('click', function() {
     infoBox.classList.toggle('hidden');
     if (!infoBox.classList.contains('hidden')) {
         editorContainer.style.filter = 'brightness(0.7) blur(1px)';
-        // document.addEventListener('click', closeIfClickOutside, true);
     } else {
         editorContainer.style.filter = 'brightness(1) blur(0)';
     }
@@ -235,10 +231,6 @@ function closeIfClickOutside (e) {
         editorContainer.style.filter = 'brightness(1) blur(0)';
         document.removeEventListener('click', closeIfClickOutside, true);
     }
-    // if (e.currentTarget === infoBtn) {
-    //     infoBox.classList.toggle('hidden');
-    //     document.removeEventListener('click', closeIfClickOutside, true);
-    // }
 };
 
 //======================== Change Colors ========================
@@ -397,18 +389,6 @@ function setGlassesColor() {
 function setEaringsColor() {
     setColor(earings, earingsColorInput, earingsSwatchInput, earingsColorPreset);
 }
-
-// function earingsPresetColor() {
-//     var n = 2;
-//     for (let i = 1; i < earingsParts.length; i++) {
-//         if (earingsParts.classList.contains('hidden')) {
-//             continue;
-//         } else {
-//             earingsColorPreset.style.backgroundColor = getComputedStyle(earings[i*n]).fill;
-//             console.log('test: earingsPresetColor -> earings[0].style.fill', getComputedStyle(earings[i*n]).fill);
-//         }
-//     }
-// }
 
 //-------------- toggle cosmetics --------------
 
