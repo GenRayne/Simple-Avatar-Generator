@@ -124,8 +124,6 @@ var headPresets = avatarGenerator.querySelectorAll('.head-preset'),
     
     earringsPresets = avatarGenerator.querySelectorAll('.earrings-preset'),
     earringsParts   = avatarGenerator.querySelectorAll('.earrings-part');
-    console.log('test: earringsPresets', earringsPresets);
-    console.log('test: earringsParts', earringsParts);
     
 function selectPart(presetsGroup, partsGroup) {
     for (let i = 0; i < presetsGroup.length; i++) {
@@ -282,10 +280,6 @@ var skinColorInput  = avatarGenerator.querySelector('.skin-color-input'),
     earringsSwatchInput = avatarGenerator.querySelector('#earrings-color-input'),
     earringsColorPreset = avatarGenerator.querySelector('.earrings-color-preset'),
     earrings            = avatarGenerator.querySelectorAll('.earrings');
-    console.log('test: earringsColorInput', earringsColorInput);
-    console.log('test: earringsSwatchInput', earringsSwatchInput);
-    console.log('test: earringsColorPreset', earringsColorPreset);
-    console.log('test: earrings', earrings);
 
 function checkColorCode(colorInput) {
     if (regexColor.test(colorInput.value)) {
