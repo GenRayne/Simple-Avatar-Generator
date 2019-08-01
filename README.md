@@ -1,4 +1,4 @@
-# Simple-Avatar-Generator
+# Simple Avatar Generator
 
 This Avatar Generator is my first "serious" (meaning quite big and independent) project with JavaScript.
 
