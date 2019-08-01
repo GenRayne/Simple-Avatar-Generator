@@ -440,7 +440,7 @@ ul.ed-parts-tabs {
 }
 .presets::-webkit-scrollbar-track,
 .color-presets::-webkit-scrollbar-track {
-    background: #F0E4DB;
+    background: #f0e4db;
     border-radius: 10px;
 }
 .presets::-webkit-scrollbar-thumb,
@@ -460,6 +460,28 @@ ul.ed-parts-tabs {
     background-color: #fff;
     border-radius: 0 5px 5px 5px;
     box-shadow: 0 2px 0 0 #caaca0;
+}
+
+.presets .tag {
+    position: absolute;
+    padding: 0 1rem 0 1rem;
+    width: 110px;
+    height: 60px;
+    visibility: hidden;
+    opacity: 0;
+
+    line-height: 60px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 2rem 0 0 2rem;
+    box-shadow: -2px 2px 8px -3px #ccc;
+
+    transition: 0.5s;
+}
+.presets:hover .tag {
+    transform: translateX(-140px);
+    visibility: visible;
+    opacity: 1;
 }
 
 .ed-parts:not(.active) {
@@ -488,6 +510,8 @@ ul.ed-parts-tabs {
     background-color: #e3cbba;
 
     transition: filter 0.3s;
+
+    z-index: 5;
 }
 .preset:not(:last-child) {
     margin-right: 0.7rem;

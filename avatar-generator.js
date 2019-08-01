@@ -81,7 +81,9 @@ var presets = parts.querySelectorAll('.presets');
 function processPresets() {
     let bgNumber = 0;
     for (let i = 0; i < presets.length; i++) {
-        for (let j = 0; j < presets[i].children.length; j++) {
+        for (let j = 0; j < presets[i].children.length; j++) {            
+            if ( presets[i].children[j].classList.contains('tag') ) continue;
+
             presets[i].children[j].style.background = presetsBGs[bgNumber];
             bgNumber++;
             presets[i].children[j].addEventListener('click', function() {
