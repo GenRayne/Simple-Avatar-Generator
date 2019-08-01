@@ -42,10 +42,10 @@ var presetsBGs = [
     'url(\'img/preset-sprite.png\') -145px -355px no-repeat #e3cbba', // 5
 
     // hair-front
+    'url(\'img/preset-sprite.png\') -145px -285px no-repeat #e3cbba', // 4
     'url(\'img/preset-sprite.png\') -285px -215px no-repeat #e3cbba', // 1
     'url(\'img/preset-sprite.png\') -5px -285px no-repeat #e3cbba',   // 2
     'url(\'img/preset-sprite.png\') -75px -285px no-repeat #e3cbba',  // 3
-    'url(\'img/preset-sprite.png\') -145px -285px no-repeat #e3cbba', // 4
     'url(\'img/preset-sprite.png\') -215px -285px no-repeat #e3cbba', // 5
     'url(\'img/preset-sprite.png\') -285px -285px no-repeat #e3cbba', // 6
 
@@ -67,7 +67,7 @@ var presetsBGs = [
     'url(\'img/preset-sprite.png\') -215px -5px no-repeat #e3cbba',   // 3
     'url(\'img/preset-sprite.png\') -215px -75px no-repeat #e3cbba',  // 4
 
-    // earings
+    // earrings
     '#e3cbba',
     'url(\'img/preset-sprite.png\') -5px -5px no-repeat #e3cbba',     // 1
     'url(\'img/preset-sprite.png\') -75px -5px no-repeat #e3cbba',    // 2
@@ -122,8 +122,10 @@ var headPresets = avatarGenerator.querySelectorAll('.head-preset'),
     glassesPresets = avatarGenerator.querySelectorAll('.glasses-preset'),
     glassesParts   = avatarGenerator.querySelectorAll('.glasses-part'), 
     
-    earingsPresets = avatarGenerator.querySelectorAll('.earings-preset'),
-    earingsParts   = avatarGenerator.querySelectorAll('.earings-part');
+    earringsPresets = avatarGenerator.querySelectorAll('.earrings-preset'),
+    earringsParts   = avatarGenerator.querySelectorAll('.earrings-part');
+    console.log('test: earringsPresets', earringsPresets);
+    console.log('test: earringsParts', earringsParts);
     
 function selectPart(presetsGroup, partsGroup) {
     for (let i = 0; i < presetsGroup.length; i++) {
@@ -150,7 +152,7 @@ addChoosePresetHandler(mouthPresets, mouthParts);
 addChoosePresetHandler(hairFrontPresets, hairFrontParts);
 addChoosePresetHandler(hairBackPresets, hairBackParts);
 addChoosePresetHandler(glassesPresets, glassesParts);
-addChoosePresetHandler(earingsPresets, earingsParts);
+addChoosePresetHandler(earringsPresets, earringsParts);
 
 //========================= Select Gender =========================
 
@@ -276,10 +278,14 @@ var skinColorInput  = avatarGenerator.querySelector('.skin-color-input'),
     glassesColorPreset = avatarGenerator.querySelector('.glasses-color-preset'),
     glasses            = avatarGenerator.querySelectorAll('.glasses'),
 
-    earingsColorInput  = avatarGenerator.querySelector('.earings-color-input'),
-    earingsSwatchInput = avatarGenerator.querySelector('#earings-color-input'),
-    earingsColorPreset = avatarGenerator.querySelector('.earings-color-preset'),
-    earings            = avatarGenerator.querySelectorAll('.earings');
+    earringsColorInput  = avatarGenerator.querySelector('.earrings-color-input'),
+    earringsSwatchInput = avatarGenerator.querySelector('#earrings-color-input'),
+    earringsColorPreset = avatarGenerator.querySelector('.earrings-color-preset'),
+    earrings            = avatarGenerator.querySelectorAll('.earrings');
+    console.log('test: earringsColorInput', earringsColorInput);
+    console.log('test: earringsSwatchInput', earringsSwatchInput);
+    console.log('test: earringsColorPreset', earringsColorPreset);
+    console.log('test: earrings', earrings);
 
 function checkColorCode(colorInput) {
     if (regexColor.test(colorInput.value)) {
@@ -386,8 +392,8 @@ function setGlassesColor() {
     setColor(glasses, glassesColorInput, glassesSwatchInput, glassesColorPreset);
 }
 
-function setEaringsColor() {
-    setColor(earings, earingsColorInput, earingsSwatchInput, earingsColorPreset);
+function setEarringsColor() {
+    setColor(earrings, earringsColorInput, earringsSwatchInput, earringsColorPreset);
 }
 
 //-------------- toggle cosmetics --------------
@@ -443,6 +449,7 @@ setBgColor();
 setClothesColor();
 setCollarColor();
 setGlassesColor();
+setEarringsColor();
 
 addPresetShadow(bgColorInput, bgColorPreset);
 
@@ -453,4 +460,4 @@ addColorHandler(bgColorInput, bgSwatchInput, bgColorPreset, setBgColor);
 addColorHandler(clothesColorInput, clothesSwatchInput, clothesColorPreset, setClothesColor);
 addColorHandler(collarColorInput,collarSwatchInput, collarColorPreset, setCollarColor);
 addColorHandler(glassesColorInput, glassesSwatchInput, glassesColorPreset, setGlassesColor);
-addColorHandler(earingsColorInput, earingsSwatchInput, earingsColorPreset, setEaringsColor);
+addColorHandler(earringsColorInput, earringsSwatchInput, earringsColorPreset, setEarringsColor);
