@@ -392,9 +392,22 @@ function setEarringsColor() {
     setColor(earrings, earringsColorInput, earringsSwatchInput, earringsColorPreset);
 }
 
+//------------- toggle tag-tooltips -------------
+
+var tagList   = avatarGenerator.querySelectorAll('.tag'),
+    tagToggle = avatarGenerator.querySelector('.tag-label');
+console.log('test: tagList', tagList);
+console.log('test: tagToggle', tagToggle);
+
+tagToggle.addEventListener('click', function () {
+    for (let i = 0; i < tagList.length; i++) {
+        tagList[i].classList.toggle('hidden');
+    }
+})
+
 //-------------- toggle cosmetics --------------
 
-var cosmeticsList = avatarGenerator.querySelectorAll('.cosmetics'),
+var cosmeticsList   = avatarGenerator.querySelectorAll('.cosmetics'),
     cosmeticsToggle = avatarGenerator.querySelector('.cosmetics-label');
 
 cosmeticsToggle.addEventListener('click', function () {

@@ -456,7 +456,7 @@ ul.ed-parts-tabs {
 }
 /* -------------- Presets -------------- */
 
-.tooltips-toggle {
+.tag-toggle {
     position: absolute;
     top: 1.5rem;
     right: 1rem;
