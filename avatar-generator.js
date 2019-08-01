@@ -72,7 +72,7 @@ var presetsBGs = [
     'url(\'img/preset-sprite.png\') -5px -5px no-repeat #e3cbba',     // 1
     'url(\'img/preset-sprite.png\') -75px -5px no-repeat #e3cbba',    // 2
     'url(\'img/preset-sprite.png\') -5px -75px no-repeat #e3cbba',    // 3
-    'url(\'img/preset-sprite.png\') -75px -75px no-repeat #e3cbba',   // 4
+    'url(\'img/preset-sprite.png\') -75px -75px no-repeat #e3cbba'    // 4
 ];
 
 //-------------- Presets --------------
