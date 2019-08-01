@@ -396,8 +396,6 @@ function setEarringsColor() {
 
 var tagList   = avatarGenerator.querySelectorAll('.tag'),
     tagToggle = avatarGenerator.querySelector('.tag-label');
-console.log('test: tagList', tagList);
-console.log('test: tagToggle', tagToggle);
 
 tagToggle.addEventListener('click', function () {
     for (let i = 0; i < tagList.length; i++) {
