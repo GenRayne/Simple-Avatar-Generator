@@ -223,6 +223,8 @@ p:last-child {
 }
 
 .editor-left-side {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -453,6 +455,13 @@ ul.ed-parts-tabs {
     background: #caaca0;
 }
 /* -------------- Presets -------------- */
+
+.tooltips-toggle {
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+    color: #caaca0;
+}
 
 .ed-parts-box {
     margin-bottom: 1rem;
