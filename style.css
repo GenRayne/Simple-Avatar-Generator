@@ -291,9 +291,7 @@ input[type="checkbox"] {
 .checkbox + .toggle-label::before {
     content: '';
     position: absolute;
-    top: 0.1rem;
-    left: -1.3rem;
-
+    
     display: inline-block;
     width: 0.7rem;
     height: 0.7rem;
@@ -310,13 +308,14 @@ input[type="checkbox"] {
     border: 2px solid #caaca0;
     transform: rotate(-90deg);
 }
+.toggles .checkbox + .toggle-label::before {
+    top: 0.03rem;
+    left: -1.3rem;
+}
 
 .checkbox + .toggle-label::after {
     content: '';
-
     position: absolute;
-    top: 0.35rem;
-    left: -1.05rem;
 
     display: inline-block;
     width: 0.45rem;
@@ -328,6 +327,10 @@ input[type="checkbox"] {
 .checkbox:checked + .toggle-label::after {
     background-color: #caaca0;
     transform: rotate(-90deg);
+}
+.toggles .checkbox + .toggle-label::after {
+    top: 0.28rem;
+    left: -1.05rem;
 }
 
 /* ---------------- Additional properties tooltips ---------------- */
@@ -458,9 +461,24 @@ ul.ed-parts-tabs {
 
 .tag-toggle {
     position: absolute;
-    top: 1.5rem;
-    right: 1rem;
+    top: 1.65rem;
+    left: 10.55rem;
     color: #caaca0;
+}
+.tag-toggle .checkbox + .tag-label::before {
+    top: 0.03rem;
+    left: -1.3rem;
+}
+.tag-toggle .checkbox + .tag-label::after {
+    top: 0.28rem;
+    left: -1.05rem;
+}
+.tag-label span {
+    opacity: 0;
+    transition: 0.3s;
+}
+.tag-label:hover span {
+    opacity: 1;
 }
 
 .editor-preset-box .ed-parts-box {
