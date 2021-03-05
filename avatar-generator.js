@@ -422,6 +422,50 @@ rBandToggle.addEventListener('click', function () {
     }
 });
 
+//---------- downloading ----------
+
+var linkSVG = document.querySelector('.dl-link--svg');
+var linkPNG = document.querySelector('.dl-link--png');
+
+function assembleSVG() {
+  // as defined in the markup for the svg containers
+  var SVG_WIDTH = 327;
+  var SVG_HEIGHT = 350;
+
+  var containerClone = portraitBox.cloneNode(true);
+  containerClone.querySelectorAll('.hidden').forEach(function(node) {
+      node.remove();
+  })
+
+  // the svg viewport will be the size of the portrait box,
+  // with inner svg elements positioned in the middle
+  var boxWidth = portraitBox.clientWidth;
+  var boxHeight = portraitBox.clientHeight;
+
+  var offset = {
+    x: Math.floor((boxWidth - SVG_WIDTH) / 2),
+    y: Math.floor(boxHeight - SVG_HEIGHT) // stick to the bottom
+  }
+
+  var svgContainer = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svgContainer.setAttribute('viewBox', `${-offset.x} ${-offset.y} ${boxWidth} ${boxHeight}`);
+  svgContainer.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+  
+  svgContainer.style = `${portraitBox.style.cssText}`; // copy background color
+  svgContainer.innerHTML = containerClone.innerHTML;
+
+  return svgContainer.outerHTML;
+}
+
+linkSVG.addEventListener('click', function() {
+  linkSVG.href = URL.createObjectURL(
+    new Blob(
+      [assembleSVG()],
+      {type:'image/svg+xml;charset=utf-8'}
+    )
+  );
+});
+
 //---------- me-text ----------
 
 var meImg  = avatarGenerator.querySelector('.me-img'),
