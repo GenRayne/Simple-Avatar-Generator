@@ -435,7 +435,6 @@ var linkSVG = document.querySelector('.dl-link--svg');
 var linkPNG = document.querySelector('.dl-link--png');
 
 function getSVGObjectURL() {
-
   var containerClone = portraitBox.cloneNode(true);
   containerClone.querySelectorAll('.hidden').forEach(function(node) {
       node.remove();
@@ -471,12 +470,9 @@ function drawPNG(onDrawn) {
     canvas.width = boxWidth;
     canvas.height = boxHeight;
 
-    canvas.getContext('2d')
-      .drawImage(image, 0, 0, boxWidth, boxHeight);
-
+    canvas.getContext('2d').drawImage(image, 0, 0, boxWidth, boxHeight);
     onDrawn(canvas.toDataURL());
   })
-
 }
 
 linkSVG.addEventListener('click', function() {
