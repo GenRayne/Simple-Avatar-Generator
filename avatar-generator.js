@@ -450,7 +450,10 @@ function getSVGObjectURL() {
   var svgContainer = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svgContainer.setAttribute('viewBox', `${-offset.x} ${-offset.y} ${boxWidth} ${boxHeight}`);
   svgContainer.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-  
+
+  svgContainer.setAttribute('width', `${boxWidth}px`);
+  svgContainer.setAttribute('height', `${boxHeight}px`);
+
   svgContainer.style = `${portraitBox.style.cssText}`; // copy background color
   svgContainer.innerHTML = containerClone.innerHTML;
 
@@ -465,6 +468,7 @@ function drawPNG(onDrawn) {
   var image = new Image();
   image.src = getSVGObjectURL();
 
+  
   image.addEventListener('load', function() {
     let canvas = document.createElement('canvas');
     canvas.width = boxWidth;
