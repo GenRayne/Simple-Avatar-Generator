@@ -434,7 +434,7 @@ var boxHeight = portraitBox.clientHeight;
 var linkSVG = document.querySelector('.dl-link--svg');
 var linkPNG = document.querySelector('.dl-link--png');
 
-function getSVGObjectURL(fixedSize) {
+function getSVGObjectURL() {
   var containerClone = portraitBox.cloneNode(true);
   containerClone.querySelectorAll('.hidden').forEach(function(node) {
       node.remove();
@@ -451,11 +451,8 @@ function getSVGObjectURL(fixedSize) {
   svgContainer.setAttribute('viewBox', `${-offset.x} ${-offset.y} ${boxWidth} ${boxHeight}`);
   svgContainer.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
 
-  // Firefox wants width & height set when drawing to canvas
-  if(fixedSize) {
-    svgContainer.setAttribute('width', `${boxWidth}px`);
-    svgContainer.setAttribute('height', `${boxHeight}px`);
-  }
+  svgContainer.setAttribute('width', `${boxWidth}px`);
+  svgContainer.setAttribute('height', `${boxHeight}px`);
 
   svgContainer.style = `${portraitBox.style.cssText}`; // copy background color
   svgContainer.innerHTML = containerClone.innerHTML;
@@ -469,7 +466,7 @@ function getSVGObjectURL(fixedSize) {
 
 function drawPNG(onDrawn) {
   var image = new Image();
-  image.src = getSVGObjectURL(true);
+  image.src = getSVGObjectURL();
 
   
   image.addEventListener('load', function() {
