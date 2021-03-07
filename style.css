@@ -18,6 +18,7 @@ div.editor-wrap, .editor-wrap div {
 
 .editor-wrap .editor-container {
     display: grid;
+    grid-template-rows: 1fr auto;
     grid-template-columns: 482px 470px;
     grid-gap: 1em;
 
@@ -223,6 +224,8 @@ p:last-child {
 }
 
 .editor-left-side {
+    grid-row: span 2;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -269,6 +272,7 @@ svg {
     display: flex;
     justify-content: space-between;
     width: 80%;
+    padding-top: 1em;
 }
 
 .toggle {
@@ -366,7 +370,6 @@ input[type="checkbox"] {
 .gender-box {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1rem;
 }
 
 .gender-icon {
@@ -386,6 +389,39 @@ input[type="checkbox"] {
 .selected-gender {
     background-color: #fcf6f1;
     box-shadow: inset 0 -2px 0 0 #caaca0;
+}
+
+/* ------------------------ Download links ------------------------ */
+
+.download-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+}
+
+.dl-link {
+  flex-grow: 1;
+  padding: 1rem;
+
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+
+  background-color: #e3cbba;
+
+  transition: 0.2s;
+}
+
+.dl-link {
+  border-radius: 5px;
+}
+
+.dl-link:hover {
+  background-color: #dbbca6;
+}
+
+.dl-link:active {
+  background-color: #cfb2a0;
 }
 
 /* ----------------------------- TABS ----------------------------- */
